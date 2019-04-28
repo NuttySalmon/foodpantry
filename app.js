@@ -17,8 +17,11 @@ mongoose.connect(config.mongoUri);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRoutes);
 
+
 app.set("view engine", "ejs");
 app.use('/', express.static(__dirname + '/www'));
+app.use('/bootstrap/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect JS for bootstrap
+app.use('/bootstrap/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS for bootstrap
 
 app.set('port', (process.env.PORT || 3000));
 
