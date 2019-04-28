@@ -1,24 +1,21 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
 <link href="/stylesheets/form.css" rel="stylesheet">
 
 <div class="col-lg-12 register-wrap" id="main">
-	<form class="form-register" method="post" action="/out" onsubmit="return validateForm()" novalidate>
-		
+	<form class="form-register" method="post" action="/new" onsubmit="return validateForm()" novalidate>
 		<div class="text-center mb-4">
-			<h1 class="h3 mb-3 font-weight-normal">Scan and checkout</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Add category</h1>
 		</div>
 		<div class="form-label-group">
-			<input type="text" id="barcode" name="barcode" class="form-control" placeholder="barcode" min="4" max="48" required>
+			<input type="text" id="name" name="name" class="form-control" placeholder="name" required>
 			<div class="invalid-feedback">
-				Invalid barcode
+				Invalid categeory
 			</div>
-			<label for="barcode">Barcode</label>
+			<label for="name">Name of category</label>
 		</div>
-		<button class="btn btn-lg btn-primary btn-block submit-button" type="submit">Checkout 1</button>
+		<button class="btn btn-lg btn-primary btn-block submit-button" type="submit">Add category</button>
 	</form>
 </div>
-
-
 
 <script>
 
@@ -45,4 +42,4 @@
 
 
 
-<% include ./partials/footer %>
+<% include ../partials/footer %>

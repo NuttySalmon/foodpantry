@@ -9,6 +9,8 @@ var express = require("express"),
 
 //requiring routes
 var	indexRoutes = require("./routes/index"),
+	categoryRoutes = require("./routes/category"),
+	inventoryRoutes = require("./routes/inventory"),
 	config = require("./config");
 
 //connect to mongodb
@@ -16,6 +18,8 @@ mongoose.connect(config.mongoUri);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRoutes);
+app.use("/inventory", inventoryRoutes);
+app.use("/category", categoryRoutes);
 
 
 app.set("view engine", "ejs");

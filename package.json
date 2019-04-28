@@ -1,7 +1,7 @@
 {
-  "name": "Mediaddict",
+  "name": "food-pantry",
   "version": "1.0.0",
-  "description": "Mediaddict v1",
+  "description": "Food pantry v1",
   "main": "app.js",
   "scripts": {
     "start": "node app",
