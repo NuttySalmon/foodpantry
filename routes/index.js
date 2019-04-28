@@ -5,6 +5,10 @@ var express = require("express"),
 
 const querystring = require('querystring'); 
 
+router.get("/", function(req, res){
+	res.render("main");
+});
+
 router.get("/add", function(req, res){
 	Category.find({}, function (err, result) {
 		
@@ -13,25 +17,36 @@ router.get("/add", function(req, res){
 			console.log(cat.name);
 			catArr.push(cat.name);
 		}
-		res.render("add", {categoryArr: catArr, msg: req.query.msg})
+		res.render("add", {categoryArr: catArr, msg: req.query.msg});
 	});
 });
 
 
 router.post("/add", function(req, res){
-	newBarcode = {
-		barcode: req.body.barcode,
-		name: req.body.name,
-		detail: req.body.detail
-	};
+	console.log(req.body.category);
+	Category.findOne({ "name": req.body.category}, function(err, cat) {
 
-	Barcode.create(newBarcode);
-	var message = newBarcode.name + " added."
-	console.log(message);
-	const query = querystring.stringify({
+		newBarcode = {
+			barcode: req.body.barcode,
+			name: req.body.name,
+			detail: req.detail,
+			category: cat._id
+		};
+
+
+		Barcode.create(newBarcode, function(err, bar){
+			cat.barcodeList.push(bar._id);
+			cat.save();
+		});
+
+		var message = newBarcode.name + " added.";
+		console.log(message);
+		const query = querystring.stringify({
           "msg": message
-      });
-	res.redirect("/add?" + query);
+      	});
+		res.redirect("/add?" + query);
+	})
+	
 });
 
 module.exports = router;

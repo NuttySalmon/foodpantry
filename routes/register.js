@@ -17,7 +17,7 @@ router.post("/", function(req, res){
 		email: req.body.email,
 		address: req.body.address
 	};
-
+	
 	Pantry.create(newPantry);
 	var message = newPantry.name + " added."
 	console.log(message);

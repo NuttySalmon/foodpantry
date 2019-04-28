@@ -2,11 +2,15 @@ var mongoose = require("mongoose");
 
 var barcodeSchema = mongoose.Schema({
     name: String,
-    barcode: String,
+    category: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Category"
+	},
     detail: String,
+    category: String,
 	itemList: [{
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "Item"
+		ref: "Inventory"
 	}]
 });
 

@@ -11,9 +11,9 @@
 
 		<div class="form-group">
 		    <label for="category">Select category</label>
-		    <select class="form-control" id="category">
+		    <select class="form-control" id="category" name="category">
 		      <% categoryArr.forEach(function(cat){%>
-		      	<option> <%=capFirst(cat)%>
+		      	<option> <%=cat%>
 		      	<%})%>
 		    </select>
 		 
@@ -41,7 +41,7 @@
 			</div>
 			<label for="detail">Short description</label>
 		</div>
-		
+
 		<button class="btn btn-lg btn-primary btn-block submit-button" type="submit">Add</button>
 	</form>
 </div>
