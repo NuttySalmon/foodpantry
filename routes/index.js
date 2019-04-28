@@ -29,12 +29,13 @@ router.post("/new-category", function(req, res){
 
 router.get("/add", function(req, res){
 	Category.find({}, function (err, result) {
-		console.log(result);
-		categoryArr = []
+		
+		var catArr = [];
 		for (let cat of result){
-			categoryArr.push(cat.name);
+			console.log(cat.name);
+			catArr.push(cat.name);
 		}
-		res.render("add", categoryArr)
+		res.render("add", {categoryArr: catArr})
 	});
 });
 
