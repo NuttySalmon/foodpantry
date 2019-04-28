@@ -11,6 +11,7 @@ var express = require("express"),
 var	indexRoutes = require("./routes/index"),
 	categoryRoutes = require("./routes/category"),
 	inventoryRoutes = require("./routes/inventory"),
+	registerRoutes = require("./routes/register"),
 	config = require("./config");
 
 //connect to mongodb
@@ -20,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRoutes);
 app.use("/inventory", inventoryRoutes);
 app.use("/category", categoryRoutes);
-
+app.use("/register", registerRoutes);
 
 app.set("view engine", "ejs");
 app.use('/', express.static(__dirname + '/www'));

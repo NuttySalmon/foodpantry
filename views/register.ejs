@@ -2,7 +2,7 @@
 <link href="/stylesheets/form.css" rel="stylesheet">
 
 <div class="col-lg-12 register-wrap" id="main">
-	<form class="form-register" method="post" action="/register" onsubmit="return validateForm()" novalidate>
+	<form class="form-register" method="post" action="#" onsubmit="return validateForm()" novalidate>
 		<div class="text-center mb-4">
 			<h1 class="display-5 mb-3 font-weight-normal text-white">Register your pantry!</h1>
 		</div>
@@ -14,17 +14,24 @@
 			</div>
 		</div>
 		<div class="form-label-group">
-			<input type="tel" id="phone" name="phone" class="form-control" placeholder="phone" required autofocus>
+			<input type="tel" id="phone" name="phone" class="form-control" placeholder="phone" autofocus>
 			<label for="phone">Phone number</label>
 			<div class="invalid-feedback" min=5>
 				Invalid phone number
 			</div>
 		</div>
 		<div class="form-label-group">
-			<input type="email" id="email" name="email" class="form-control" placeholder="email" required autofocus>
+			<input type="email" id="email" name="email" class="form-control" placeholder="email"  autofocus>
 			<label for="email">Email</label>
 			<div class="invalid-feedback" min=5>
 				Invalid email
+			</div>
+		</div>
+		<div class="form-label-group">
+			<input type="text" id="address" name="address" class="form-control" placeholder="address" autofocus>
+			<label for="address">Address</label>
+			<div class="invalid-feedback" min=5>
+				Invalid address
 			</div>
 		</div>
 		<div class="form-label-group">

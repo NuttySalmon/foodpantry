@@ -11,7 +11,7 @@ router.post("/new", function(req, res){
 	Category.create(newCat);
 	var message = newCat.name + " added."
 	console.log(message);
-	res.render("category/new", {msg: message});
+	res.redirect("category/new", {msg: message});
 });
 
 module.exports = router;
