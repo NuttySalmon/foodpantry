@@ -1,7 +1,9 @@
 <% include ../partials/header %>
-<div class="container">
-	<h1> <%=name%> </h1>
+<% include ../ejs-functions/capFirst %>
 
+<div class="container" style="padding: 2rem">
+	<h1> <%=capFirst(name)%> </h1>
+	<br>
 	<ul class="list-group">
 		<%barArr.forEach(function(item){%>
 		  <a href=<%="/"+ item.code%>><li class="list-group-item"><%=item.name%></li>

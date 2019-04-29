@@ -22,13 +22,22 @@ body {
 
 
 
-/* Thumbnail styles */
 .card-img{
-	object-fit: cover; 
-	height: 5rem; 
-	filter: brightness(0.8);
+	object-fit: cover;
+	height: 9rem;
+	filter: brightness(0.5);
 }
 
+.card:hover{
+	filter: brightness(1.5);
+}
+
+.card-title{
+	top:28%;
+	position: relative;
+	color: whitesmoke;
+	text-shadow: 2px 2px black;
+}
 
 
 /* Entry show page delete button */
