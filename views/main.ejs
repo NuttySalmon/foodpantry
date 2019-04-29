@@ -3,16 +3,23 @@
 <link href="/stylesheets/form.css" rel="stylesheet">
 
 <!doctype html>
-
-<html>
-<body>
-<a href="">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://www.pngkey.com/png/full/12-124653_steak-png-clip-art-steak-clip-art.png">
-        <div class="card-body">
-            <h5 class="card-title" align="center">Meats</h5>
-        </div>
-    </div>
-</a>
-</body>
-</html>
+<div class="container">
+<h1 style="color:whitesmoke; padding-top: 2rem; text-align: center"> What do you need? </h1>
+	<div class="row text-center flex-wrap" id="entry-grid" style="align-items: center">
+		<% categoryArr.forEach(function(cat){%>
+			<div class="col-md-4" style="padding-top: 3rem">
+				<a href="">
+		    	<div class="card text-white">
+	      	  <img class="card-img" src="<%=cat.img%>">
+		        <div class="card-img-overlay">
+		        	<h1 class="card-title" style="text-shadow: 2px 2px black" >
+					    	<%=capFirst(cat.name)%>
+					  	</h1>	
+					  </div>
+          </div>
+        </a>
+	    </div>
+		<%})%>
+	</div>
+</div>
+<% include ./partials/footer %>

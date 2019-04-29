@@ -6,7 +6,12 @@ var express = require("express"),
 const querystring = require('querystring'); 
 
 router.get("/", function(req, res){
-	res.render("main");
+	Category.find({})
+		.sort({order: 1})
+		.exec(
+		function (err, result) {
+		res.render("main", {categoryArr: result, msg: req.query.msg});
+	});
 });
 
 router.get("/add", function(req, res){

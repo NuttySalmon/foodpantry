@@ -13,7 +13,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: var(--dark-grey);
+	/*background-color: var(--dark-grey);*/
 }
 
 .container .text-muted {
@@ -23,17 +23,10 @@ body {
 
 
 /* Thumbnail styles */
-
-.thumbnail img {
-	width: 100%;
-}
-
-.thumbnail {
-	padding: 0;
-}
-
-.thumbnail .caption-full {
-	padding: 9px;
+.card-img{
+	object-fit: cover; 
+	height: 5rem; 
+	filter: brightness(0.8);
 }
 
 
@@ -51,4 +44,5 @@ body {
 .flex-wrap {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center
 }

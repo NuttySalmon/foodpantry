@@ -10,10 +10,10 @@
 		</div>
 
 		<div class="form-group">
-		    <label for="category">Select category</label>
 		    <select class="form-control" id="category" name="category">
-		      <% categoryArr.forEach(function(cat){%>
-		      	<option> <%=cat%>
+				<option disabled="true" selected="selected"> Select category </option>
+		      	<% categoryArr.forEach(function(cat){%>
+		      		<option> <%=cat%>
 		      	<%})%>
 		    </select>
 		 
