@@ -32,7 +32,7 @@ router.post("/add", function(req, res){
 	Category.findOne({ "name": req.body.category}, function(err, cat) {
 
 		newBarcode = {
-			barcode: req.body.barcode,
+			code: req.body.barcode,
 			name: req.body.name,
 			detail: req.detail,
 			category: cat._id
